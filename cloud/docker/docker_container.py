@@ -336,7 +336,7 @@ options:
       - always
       - no
       - on-failure
-      - unless-stopped 
+      - unless-stopped
     default: on-failure
     required: false
   restart_retries:
@@ -1465,7 +1465,7 @@ class Container(DockerBaseClass):
         if isinstance(config_ulimits[0], Ulimit):
             for limit in config_ulimits:
                 if limit.hard:
-                    results.append("%s:%s" % (limit.name, limit.soft, limit.hard))
+                    results.append("%s:%s" % (limit.name, limit.hard))
                 else:
                     results.append("%s:%s" % (limit.name, limit.soft))
         else:
